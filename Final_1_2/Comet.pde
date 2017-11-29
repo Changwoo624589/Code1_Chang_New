@@ -3,6 +3,7 @@ class Comet{
   PShape[] comet = new PShape[3];
  float rx, ry;
  float rot;
+ int r = int(random(0, comet.length));
   Comet(){
     //rotateY(rot += 5);
     x = random(-width, width);
@@ -39,20 +40,15 @@ class Comet{
     float xx = map(x/z, 0, 1, 0, width);
     float yy = map(y/z, 0, 1, 0, height);
     float s = map(z, 0, width, 250, 0);
-    random(xx);
-    random(yy);
-       pushMatrix();
-      translate(xx, yy);
+
+
+      //fill(255);
+    //sphere(s);
+    //for(int i = 0; i<comet.length; i++){
       
-      popMatrix();
-    
-      fill(255);
-    ellipse(xx, yy, s, s);
-    for(int i = 0; i<comet.length; i++){
+     shape(comet[r], xx, yy, s*0.9, s*0.9);
 
-     shape(comet[i], xx, yy, s, s);
-
-   }
+   //}
 
  }
 
