@@ -17,7 +17,7 @@ void setup(){
   }
   
   colorMode(HSB, 360,100,100);
-  
+  shapeMode(CENTER);
 
 }
 
@@ -26,10 +26,11 @@ void draw(){
 
   background(0);
   //pushMatrix();
-  //rotateY(b += 1);
+ 
   translate(width/2, height/2);
   
-
+  
+  
 
   for(int i = 0; i<comets.length; i++){
 
@@ -37,5 +38,10 @@ void draw(){
      comets[i].display();
 
   }
-
+  pushMatrix();
+  fill(255, 255 , 100);
+   rotateY(b = -20);
+   ellipse(0, 0, 140, 140);
+  quad(600, 150, 680, 150, 680, 250, 600, 250);
+  popMatrix();
 }
